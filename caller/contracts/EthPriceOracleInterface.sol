@@ -3,5 +3,5 @@
 pragma solidity 0.5.0;
 
 contract EthPriceOracleInterface {
-    function getLatestthPrice() public returns (uint256);
+    function getLatestEthPrice() public returns (uint256);
 }
