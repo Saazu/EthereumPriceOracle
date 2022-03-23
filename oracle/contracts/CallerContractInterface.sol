@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.5.0;
+pragma solidity 0.8.10;
 
-contract CallerContractInterface {
-    function callback(uint256 _ethPrice, uint256 id) public;
+abstract contract CallerContractInterface {
+    function callback(uint256 _ethPrice, uint256 id) public virtual;
 }

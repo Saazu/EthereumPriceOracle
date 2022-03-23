@@ -1,6 +1,14 @@
 {
-  "name": "EthPriceOracle",
+  "name": "etpriceoracle",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.5.0",
+    "add": "^2.0.6",
+    "axios": "^0.26.1",
+    "bn.js": "^5.2.0",
+    "web3": "^1.7.1",
+    "yarn": "^1.22.18"
+  }
 }

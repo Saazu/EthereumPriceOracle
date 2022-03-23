@@ -1,14 +1,14 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.5.0;
+pragma solidity 0.8.10;
 
-import "./EthPriceOracleInterface";
-import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
+import "./EthPriceOracleInterface.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract CallerContract is Ownable {
     uint256 ethPrice;
     address public oracleAddress;
     EthPriceOracleInterface private oracleInstance;
-    mapping(address => uint256) myRequests;
+    mapping(uint256 => bool) myRequests;
 
     event newOracleAddressEvent(address oracleAddress);
     event ReceivedNewRequestIdEvent(uint256 requestId);
@@ -37,7 +37,10 @@ contract CallerContract is Ownable {
     }
 
     modifier onlyOracle() {
-      require(msg.sender === oracleAddress, "You are not authorized to call this function.");
-      _;
+        require(
+            msg.sender == oracleAddress,
+            "You are not authorized to call this function."
+        );
+        _;
     }
 }
